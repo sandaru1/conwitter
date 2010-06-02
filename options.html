@@ -1,0 +1,55 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Conwitter Options</title>
+	<link rel="stylesheet" href="styles/options.css" media="all" type="text/css" /> 
+	<link rel="stylesheet" href="styles/colorpicker.css" media="all" type="text/css" /> 
+  <script type="text/javascript" src="scripts/jquery-1.3.2.js"></script>
+  <script type="text/javascript" src="scripts/colorpicker.js"></script>
+  <script type="text/javascript" src="scripts/const.js"></script>
+  <script type="text/javascript" src="scripts/options.js"></script>
+</head>
+<body>
+  <form id="saveform">
+    <h1>Conwitter Options</h1>
+    
+    <ul>
+      <li class="title">Display</li>
+      <li><label for="pageWidth">Popup Width:</label> <input type="text" value="" id="pageWidth" /></li>
+      <li><label for="pageHeight">Popup Height:</label> <input type="text" value="" id="pageHeight" /></li>
+      <li><label for="mentionColor">Mention Color:</label> <input type="text" value="" id="mentionColor" /></li>
+      <li><label for="rtColor">Retweet Color:</label> <input type="text" value="" id="rtColor" /></li>
+      <li><label for="newColor">New Tweet Color:</label> <input type="text" value="" id="newColor" /></li>
+      <li>
+        <label for="twitpic">Twitpic Thumbnails:</label> 
+        <select id="twitpic">
+          <option value="none">Don't show</option>
+          <option value="thumb">Medium Size</option>
+          <option value="mini">Small Size</option>
+        </select>
+      </li>
+      <li class="help">Tweet colors are combined to make a nicer effect. Choose your colors carefully! For example, a new tweet with your username mentioned will be displayed using a combination of both "New Tweet" and "Mention" colors.</li>
+    </ul>
+
+    <ul>
+      <li class="title">Streaming API (<span style="color:#c00">Experimental</span>)</li>
+      <li><label for="stream">Enable Streaming API:</label> <input type="checkbox" id="stream" /></li>
+      <li><label for="username">Username:</label> <input type="text" value="" id="username" /></li>
+      <li><label for="password">Password:</label> <input type="password" value="" id="password" /></li>
+      <li class="help">Twitter offers an Alpha Streaming API, which allows push tweets. Tweets from your followers will appear as soon as those are published. You only need to enter username/password if you are using the streaming API. Everything else uses OAuth authentication system.<p/>
+      Warning : Enabling this API might show you out of place tweets(ex : replies sent to users you follow by other users you don't follow). This is the default behaviour of the streaming API - an option will be given to filter this very soon.
+      </li>
+    </ul> 
+  
+    <ul style="opacity:0.3">
+      <li class="title">Time Intervals(<span style="color:#c00">coming soon</span>)</li>
+      <li><label for="homeTime">Home Timeline:</label> <input type="text" value="" id="homeTime" /></li>
+      <li><label for="mentionsTime">Mentions Timeline:</label> <input type="text" value="" id="mentionsTime" /></li>
+      <li class="help">Make sure your time limits are reasonable. Twitter API only allows 150 API hits per hour.</li>
+    </ul>  
+
+    <input type="submit" value="Save" />
+  </form>  
+</body>
+</html>
+

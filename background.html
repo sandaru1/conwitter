@@ -1,0 +1,35 @@
+<html>
+  <script type="text/javascript" src="scripts/jquery-1.3.2.js"></script>
+  <script type="text/javascript" src="scripts/sha1.js"></script>
+  <script type="text/javascript" src="scripts/oauth.js"></script>
+  <script type="text/javascript" src="scripts/const.js"></script>
+  <script type="text/javascript" src="scripts/api.js"></script>
+  <script type="text/javascript" src="scripts/stream.js"></script>
+  <script type="text/javascript" src="scripts/timeline.js"></script>
+  <script>
+    $(document).ready(function() {
+      if (Conwitter.OAuth.token==null) {
+        var api = new Conwitter.API();
+
+        chrome.extension.onRequest.addListener(
+          function(request, sender, sendResponse) {
+            if (request.type==Conwitter.Messages.PIN) {
+              api.verifyToken(request.pin,function() {
+                Conwitter.Instances.Timeline = new Conwitter.Timeline();
+                sendResponse({});
+                chrome.tabs.remove(sender.tab.id);
+              });
+            } 
+          }
+        );
+
+        api.requestToken();
+      } else {
+        Conwitter.Instances.Timeline = new Conwitter.Timeline();
+      }
+    });
+  </script>
+  <body>
+  </body>
+</html>
+

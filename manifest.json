@@ -1,0 +1,27 @@
+{
+  "name": "Conwitter",
+  "version": "1.0.6.5",
+  "description": "Twitter Extension for Google Chrome",
+  "browser_action": {
+    "default_icon": "images/logo.png",
+    "default_title": "Conwitter",
+    "popup" : "popup.html"
+  },
+  "permissions": [
+    "http://api.twitter.com/",
+    "http://twitter.com/",
+    "http://stream.twitter.com/",
+    "tabs"
+  ],
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["http://twitter.com/oauth/authorize"],
+      "js": ["scripts/jquery-1.3.2.js","scripts/const.js", "scripts/oauth-inject.js"]
+    }
+  ],
+  "icons": {
+    "48": "images/logo_large.png"
+  },
+  "background_page": "background.html"
+}

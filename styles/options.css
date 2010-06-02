@@ -1,0 +1,55 @@
+body {
+  font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+  font-size:12px;
+  background-image:url('../images/background.jpg');
+  background-repeat:no-repeat;
+  background-position:center right;
+}
+
+ul {
+  list-style:none;
+  margin:0;
+  margin-bottom:10px;
+  padding:10px;
+  border:1px dotted #ccc;
+  -webkit-border-radius: 5px;
+  overflow:auto;
+  width:50%;
+}
+
+ul li {
+  width:100%;
+  float:left;
+  clear:both;
+  margin-bottom:5px;
+}
+
+ul li label {
+  width:200px;
+  display:block;
+  float:left;
+  line-height:20px;
+}
+
+ul li input {
+  float:left;
+}
+
+ul li input[type=text],ul li input[type=password] {
+  width:300px;
+  height:20px;
+  border:1px solid #ddd;
+}
+
+ul li.title {
+  margin-bottom:10px;
+  text-align:center;
+  font-size:15px;
+  font-weight:bold;
+}
+
+ul li.help {
+  color:#999;
+  margin-top:5px;
+  text-align:justify;
+}
